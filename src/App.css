@@ -1,38 +1,349 @@
-.App {
+/* --- Variables --- */
+:root {
+    --orange: #06a44f;
+    --orange-dark: #06a44f;
+    /* --bg: #fff7ef; */
+    --bg: #ffffff;
+    --card: #ffffff;
+    --text: #222;
+}
+
+img{
+    max-width: 100%;
+    height: 100px;
+
+}
+/* --- Custom Font --- */
+@font-face {
+    font-family: 'Gujarati'; /* Name you want to use in your CSS */
+    src: url('/public/HindVadodara-Medium.ttf') format('truetype'); /* Path to your TTF file and format declaration */
+    font-weight: 500; /* Adjust based on the weight of your font */
+    font-style: normal;
+    font-display: swap; /* Helps prevent a blank page while the font loads */
+}
+
+
+
+
+/* --- Global --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gujarati', sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* --- Header --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 6%;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    flex-wrap: wrap;
+}
+
+.brand {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--orange-dark);
+}
+
+/* --- Language buttons --- */
+.lang-container {
+    display: flex;
+    gap: 12px;
+}
+
+.lang-btn {
+    padding: 6px 14px;
+    border: 2px solid var(--orange);
+    border-radius: 12px;
+    background: transparent;
+    color: var(--orange-dark);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: var(--orange);
+    color: #fff;
+}
+
+/* --- Layout --- */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 22px 6%;
+}
+
+/* --- Hero --- */
+.hero {
+    background: linear-gradient(235deg, var(--bg), var(--text)), url('../public/Images/K-Til.png') no-repeat center/cover;
+    color: #fff;
+    padding: 26px;
+    height: 635px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    background-blend-mode: multiply;
+}
+
+.heroo{
+   background: linear-gradient(235deg, var(--bg), var(--text)), url('../public/Images/K-Moog.png') no-repeat center/cover;
+    color: #fff;
+    padding: 26px;
+    height: 635px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    background-blend-mode: multiply;
+}
+
+.hero h1 {
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 16px;
+}
+
+/* --- Card --- */
+.card {
+    background: var(--card);
+    padding: 22px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
+}
+
+.card h2 {
+    color: var(--orange-dark);
+    margin-bottom: 14px;
+    border-left: 4px solid var(--orange);
+    padding-left: 10px;
+}
+
+/* --- Table --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+td:first-child {
+    font-weight: 600;
+    color: var(--orange-dark);
+}
+
+/* --- Chart --- */
+.chartBox {
+    text-align: center;
+}
+
+.chartBox canvas {
+    max-width: 260px;
+    margin: auto;
+}
+
+/* --- Full text --- */
+.section {
+    margin-bottom: 18px;
+    line-height: 1.8;
+}
+
+/* --- Footer --- */
+.footer {
+    background: var(--orange);
+    color: #fff;
+    padding: 26px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.footer a {
+    display: inline-block;
+    margin: 8px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.call {
+    background: #25D366;
+}
+
+.whatsapp {
+    background: #25D366;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 768px) {
+  *
+  {
+    font-family:Gujarati, sans-serif;
+  }
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    img{
+       max-width: 100%;
+       height: auto;
+    }
+
+    .lang-container {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .lang-btn {
+        flex: 1;
+        text-align: center;
+        height: 40px;
+        padding: 6px 16px;
+        border-radius: 2rem;
+    }
+
+    .container {
+        padding: 16px 4%;
+    }
+
+    .hero {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .hero h1 {
+        font-size: 22px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+    }
+
+    table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .section {
+        font-size: 14px;
+    }
+
+    .chartBox canvas {
+        max-width: 200px;
+    }
+
+    .footer {
+        padding: 20px;
+        height: auto;
+    }
+
+    .footer a {
+        display: block;
+        width: 100%;
+        margin: 8px 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 18px;
+    }
+
+     img{
+       max-width: 100%;
+       height: auto;
+    }
+
+    .hero p {
+        font-size: 12px;
+    }
+
+    .card h2 {
+        font-size: 16px;
+    }
+
+    table td {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .section {
+        font-size: 13px;
+    }
+
+    .chartBox canvas {
+        max-width: 280px;
+    }
+}
+
+
+
+.company {
+  border-bottom: 1px solid #ffffff;
+  width: 30%;
+  padding-bottom: 10px;
+  margin: 0 auto 20px;
   text-align: center;
+  line-height: 1.5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* 📱 Mobile devices (all phones) */
+@media (max-width: 768px) {
+  .company {
+    width: 90%;             
+    padding-bottom: 15px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .company h2 {
+    font-size: 18px;
+  }
+
+  .company p {
+    font-size: 14px;
+    line-height: 1.6;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* 📱 Very small phones */
+@media (max-width: 480px) {
+  .company {
+    width: 95%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .company h2 {
+    font-size: 16px;
+  }
+
+  .company p {
+    font-size: 13px;
   }
 }
