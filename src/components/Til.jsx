@@ -312,7 +312,7 @@ function Til() {
       <header>
         <img
           className="brand"
-          src="/images/KhetiWadi_Logo.png"
+          src="/Images/KhetiWadi_Logo.png"
           alt="Moog Logo"
           width="100"
         />
